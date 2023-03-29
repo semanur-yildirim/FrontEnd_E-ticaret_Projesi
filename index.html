@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>E Ticaret</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Navbar Start -->
+        <div class="container-fluid  ">
+            <nav class="navbar d-md-flex row  bg-danger  ">
+                <div class="container-fluid    ">
+                    <a href="/"
+                        class="navbar-brand text-bg-success p-md-2 col-md-2 py-3 fs-4  col-12 text-center fw-bold ">SMN
+                        KİTAP</a>
+                    <!-- Collapse Start -->
+                    <!-- <div class=" menu d-flex d-md-none align mt-3 ">
+                        <button class="  navbar-toggler-icon bg-success" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
+                        </button>
+                        <div class="collapse" id="collapseExample">
+                            <div class="text-warning ">
+                                Some placeholder content for the collapse component. This panel is hidden by default but
+                                revealed when the user
+                                activates the relevant trigger Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Recusandae quae reprehenderit fuga deleniti tenetur voluptatibus inventore totam, magni
+                                debitis assumenda molestias enim libero sint necessitatibus dolores eum et nulla?
+                                Asperiores..
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Collapse End -->
+
+                    <form class="d-flex col-lg-6 col-md-8 col-10 mt-3 mt-md-0 justify-content-end" role="search">
+                        <input class="form-control me-2  " type="search"
+                            placeholder="Aramak istediğiniz kitabı giriniz." aria-label="Search">
+                        <button class="btn btn-success  " type="submit">Arama</button>
+                    </form>
+                    <nav class="navbar navbar-expand-md d-lg-flex d-none">
+
+                        <div>
+                            <button class="btn btn-success  " type="submit">Giriş Yap</button>
+
+                            <button class="btn btn-success " type="submit">Üye Ol</button>
+                        </div>
+                        <div class="ikon ">
+
+                            <button class="btn btn-success " type="submit"><i class="fa-solid fa-heart">
+                                </i><span class="count-2">2</span> </button>
+                            <button class="btn btn-success fw-6 deneme deneme" id="deneme" onclick="toggleModal();"
+                                type="submit"><i class="fa-solid fa-cart-shopping "></i>
+                                <span class="count">2</span>
+                            </button>
+
+
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+            <div class="content-filter">
+                <div class="container-fluid ">
+                    <nav class="navbar navbar-expand-md  mt-2 row d-none d-md-flex">
+                        <a class="navbar-brand col-md col-4  " href="#">Kitap</a>
+                        <a class="navbar-brand col-md col-4 " href="#">Dergi</a>
+                        <a class="navbar-brand col-md col-4" href="#">Hobi</a>
+                        <a class="navbar-brand col-md col-4" href="#">Kırtasiye</a>
+                        <a class="navbar-brand col-md col-4" href="#">Oyuncak</a>
+                        <a class="navbar-brand col-md col-4" href="#">Sınava Hazırlık</a>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+        <!-- Basket start -->
+        <div class="basket-modal ">
+            <div class="basket-items">
+                <div class="mt-2 ms-2"><i class="bi bi-x btn btn-danger py-1 p-2" onclick="Close();">X</i>
+
+                </div>
+                <div class="text-center fs-5 fw-bold">Sepetim</div>
+                <div class="overflow-auto">
+                    <div class=" mt-4 d-flex align-items-center">
+                        <div class=" ">
+                            <img class="basket-img" src="images/Book/book-0.jpg">
+                        </div>
+                        <div class=" ms-3 ">
+                            <h5 class="">Nutuk</h5>
+                            <div class="">Mustafa Kemal Atatürk</div>
+                            <div class=" text-center fw-bold mt-1">₺45.90</div>
+
+
+                        </div>
+                        <div class="ms-4">
+                            <span class="fw-bold fs-5">+</span>
+                            <span>1</span>
+                            <span class="fw-bold">-</span>
+
+                        </div>
+                    </div>
+                    <div class=" mt-4 d-flex align-items-center">
+                        <div class=" ">
+                            <img class="basket-img" src="images/Book/book-1.jpg">
+                        </div>
+                        <div class=" ms-3 ">
+                            <h5 class="">Nutuk</h5>
+                            <div class="">Mustafa Kemal Atatürk</div>
+                            <div class=" text-center fw-bold mt-1">₺45.90</div>
+
+
+                        </div>
+                        <div class="ms-4">
+                            <span class="fw-bold fs-5">+</span>
+                            <span>1</span>
+                            <span class="fw-bold">-</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="basket-total  mt-5 m-3">
+                    <div>Toplam : <span class="fw-bold"> ₺91.8</span> </div>
+                    <button class="btn btn-danger fw-medium ">Ödeme Yap</button>
+                </div>
+            </div>
+        </div>
+        <!-- basket end -->
+        <!-- Content Start -->
+        <div class="container-fluid mt-3">
+
+            <!-- Carousel Start -->
+            <div class="col-12 mt-3 ">
+                <div id="carouselExampleIndicators" class="carousel slide ">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                            aria-label="Slide 7"></button>
+
+
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="1000">
+                            <img src="images/carausel-1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel-2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carusel-3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item " data-bs-interval="1000">
+                            <img src="images/Carousel-4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel-5.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/carousel-6.jpg" class="d-block w-100" alt="...">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Carousel End -->
+            <!-- ikons Start -->
+            <div class=" ikon  row mt-5 d-flex  text-center ">
+                <div class="col-sm-2 col-4">
+                    <a href="#"><img src="images/icon-0.svg"></img>
+                        <P>Top 100</P>
+                    </a>
+                </div>
+                <div class="col-sm-2 col-4">
+                    <a href="#">
+                        <img src="images/ikon-1.svg"></img>
+                        <P>Bilim Kurgu</P>
+                    </a>
+                </div>
+                <div class="col-sm-2 col-4">
+                    <a href="#">
+                        <img src="/images/icon2.svg"></img>
+                        <p>Manga</p>
+                    </a>
+
+                </div>
+
+                <div class="col-sm-2 col-4">
+                    <a href="#"><img src="images/ikon-4.svg"></img>
+                        <p>Suç ve Gizem</p>
+                    </a>
+                </div>
+                <div class="col-sm-2 col-4">
+                    <a href="#">
+                        <img src="images/icon-5.svg"></img>
+                        <p>Fantastik</p>
+                    </a>
+
+                </div>
+                <div class="col-sm-2 col-4">
+                    <a href="#">
+                        <img src="images/icon-6.svg"></img>
+                        <p>Defter</p>
+                    </a>
+
+                </div>
+            </div>
+            <!-- ikons End -->
+
+            <!-- Filter Start -->
+            <div class="container">
+                <nav class="navbar navbar-expand-md bg-body-tertiary mt-2 row d-none d-md-flex filters">
+                    <span class="navbar-brand col-md col-3 active" href="#" id="bestsellers">Çok Satanlar</span>
+                    <span id="recommended" class="navbar-brand col-md col-3 " href="#">Önerilenler</span>
+                    <span id="classics" class="navbar-brand col-md col-3" href="#">Klasikler</span>
+                </nav>
+            </div>
+            <!-- Filter End -->
+        </div>
+    </div>
+    <!-- Book Start -->
+    <div id="task-list" class="text-center mt-5 container">
+    </div>
+    <!-- Book End -->
+    <!-- Footer Start -->
+
+    <div class="fs-2  ps-3 pe-3 py- bg-white text-center mt-5 bg-body-tertiary">
+        <div class="row align-items-center">
+            <div class="col-sm-5">
+                <div class="row d-flex ">
+                    <div class="col-6">
+                        <h2 class="text-danger">SMN Kitap</h2>
+
+                    </div>
+                    <div class="col-sm-5">
+                        <div>
+                            <i class="fa-brands fa-instagram "></i>
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-tiktok"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7">
+                <label class="fs-3 mt-2">Müşteri Hizmetleri: </label>
+                <label class="text-danger "> 0850 850 0 850</label>
+                <p class="fs-5 fw-normal">Hafta içi 08:30 - 18:30</p>
+            </div>
+        </div>
+
+    </div>
+    <footer class="container-fluid  bg-danger ">
+
+        <div class="container  p-2">
+
+            <div class="">
+                <div class="row justify-content-between gap-3 p-4 ">
+                    <div class="col-5 col-md-2">
+                        <h4>Önemli Bilgiler</h4>
+                        <ul class=" list-group list-unstyled ">
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Teslimat Koşulları</a></li>
+                            <li><a href="#">Kişisel Verilerin Korunması</a></li>
+                            <li><a href="#">Satış Sözleşmesi</a></li>
+
+                        </ul>
+                    </div>
+                    <div class=" col-5 col-md-2">
+                        <h4>Hızlı Erişim</h4>
+                        <ul class=" list-group list-unstyled ">
+                            <li><a href="#">İletişim</a></li>
+                            <li><a href="#">Mağazalarımız</a></li>
+                            <li><a href="#">Kişisel Verilerin Korunması</a></li>
+                            <li><a href="#">Satış Sözleşmesi</a></li>
+
+                        </ul>
+                    </div>
+                    <div class=" col-5 col-md-2">
+                        <h4>Üye</h4>
+                        <ul class=" list-group list-unstyled ">
+                            <li><a href="#">Sıkça Sorulan Sorular</a></li>
+                            <li><a href="#">Yeni Üyelik</a></li>
+                            <li><a href="#">Üye girişi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class=" col-5 col-md-4 text-center  ">
+                        <h5 class="text-white ">SMN Mobil Uygulamaları Cebinizde</h5>
+                        <p>App Store, Google Play ve AppGallery üzerinden uygulamamızı indirebilirsiniz.</p>
+                        <div class="row ms-2 me-2 justify-content-between">
+                            <div class="col-3">
+                                <img src="/images/Footer/1.png" alt="">
+                            </div>
+                            <div class="col-3">
+                                <img src="/images/Footer/2.png" alt="">
+                            </div>
+                            <div class="col-3">
+                                <img src="/images/Footer/3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="row mt-4 bg-white ms-4">
+                            <img src="/images/Footer/kart.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Footer End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
